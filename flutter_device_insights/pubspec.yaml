@@ -1,5 +1,5 @@
 name: flutter_device_insights
-description: "Battery level, device model, cache size and live battery/thermal streams for Flutter, built with Pigeon. Tested on Android; the iOS side is untested."
+description: "Battery level, device model, cache size and live battery/thermal streams for Flutter, built with Pigeon. Tested on Android; iOS compiles but is not run-tested."
 version: 0.1.0
 repository: https://github.com/favadthottathil/flutter_device_insights
 issue_tracker: https://github.com/favadthottathil/flutter_device_insights/issues

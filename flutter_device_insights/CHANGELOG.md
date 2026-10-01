@@ -8,5 +8,5 @@ First release.
 * All failures reach Dart as `DeviceInsightsException` with a stable `code`.
 * Native contract defined once in `pigeons/messages.dart` and generated for Dart, Kotlin and Swift (Pigeon 29).
 * Android: tested on one device (Android 16) with integration tests, plus 28 Kotlin and 13 Dart unit tests.
-* iOS: implemented in Swift but **not run on a simulator or device**. Behaviour differs from Android; see the README table.
+* iOS: implemented in Swift and compiled in CI, but **not run on a simulator or device**. Behaviour differs from Android; see the README table.
 * Thermal status requires Android 10 (API 29); below that the stream errors with `UNAVAILABLE`.

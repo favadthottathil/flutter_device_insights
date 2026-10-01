@@ -5,8 +5,9 @@
 
 Battery level, device model, cache size, app settings shortcut, and live battery
 and thermal streams for Flutter. Android is tested on a real device. The iOS
-(Swift) side is written but has never been compiled or run by me; CI is set up
-to compile it but has not run yet. Treat iOS as untested.
+(Swift) side compiles in CI (`flutter build ios --no-codesign` on a macOS
+runner) but has never been run on a simulator or device. Treat iOS behaviour as
+untested.
 
 The native contract is defined once in [`pigeons/messages.dart`](pigeons/messages.dart)
 and generated for Dart, Kotlin and Swift with [Pigeon](https://pub.dev/packages/pigeon).

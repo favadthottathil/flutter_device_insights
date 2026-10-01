@@ -29,8 +29,8 @@ Started: 2026-10-01
 ## Week 4: Swift basics
 - [x] Swift Pigeon output generated; iOS implementation written (host API + battery and thermal streams)
 - [x] Dart analyze clean and 11 Dart tests still pass after regenerating
-- [ ] Compiles in CI on macos-latest (workflow written in `.github/workflows/ios.yml`; not run: no git repo or GitHub remote yet, and no Swift compiler here)
-- [ ] Not device-tested on iOS; do not claim iOS support beyond "compiled in CI" once that run is green
+- [x] Compiles in CI on macos-latest: `iOS build` workflow green on b9e8f64 (2026-10-02), including `flutter build ios --debug --no-codesign` with the Swift code
+- [ ] Not run or device-tested on iOS; claim "compiles in CI" at most, never "tested on iOS"
 
 ## Week 5: Testing and quality
 - [x] Dart channel tests (13: host API, error mapping, stream lifecycle)
@@ -40,7 +40,7 @@ Started: 2026-10-01
 - [x] `flutter test integration_test` on the I2302: 7/7 pass, including the 2 MiB write-then-count test (2026-10-02)
 - [x] `getCacheSizeBytes` confirmed off the main thread on the I2302 (`flutter-worker-0`, via a temporary log, removed; no automated thread assertion)
 - [ ] Swift `getCacheSizeBytes` not compiled (no toolchain; CI has not run)
-- [ ] CI green with badge (needs the GitHub repo; no badge added because the URL is unknown)
+- [x] CI green with badges: `CI` (analyze, 13 Dart tests, example APK, 28 Kotlin tests) and `iOS build` both succeeded on b9e8f64. Repo: https://github.com/favadthottathil/flutter_device_insights (public)
 - Gaps: Thermal API 29+ listener path is not unit-tested (JVM SDK_INT is 0); only covered on device. `dart format` would change 8 files, so no format gate yet.
 
 ## Week 6: Ship
@@ -48,7 +48,7 @@ Started: 2026-10-01
 - [ ] Demo GIF (not made: needs a screen recording plus a converter such as ffmpeg, which is not installed here)
 - [x] `flutter pub publish --dry-run`: found and fixed a real error (generated code imports `meta`, now a dependency). Remaining: 1 warning, no `repository` field (GitHub URL unknown)
 - [x] LICENSE: MIT, "Copyright (c) 2026 Favad" (change the name if it should read differently)
-- [x] Git repo initialised at the workspace root (branch main, first commit 8ee76ad, no remote yet)
+- [x] Git repo at the workspace root, pushed to the public GitHub repo above (branch main)
 - [ ] Integrated into a real app (not done: the app is not in this workspace)
 - [x] 5 interview answers written in `docs/INTERVIEW.md`, from real events in this project
 - [ ] v0.1.0 released. Decision (2026-10-02): publish only after the GitHub repo exists, the `repository` field and CI badge are added, and CI has compiled the Swift code. Not tagged, not on pub.dev
@@ -58,10 +58,11 @@ Safe now (true today):
 - Built a Flutter plugin bridging Dart to native Android (Kotlin) with MethodChannel, EventChannel and Pigeon-generated type-safe APIs, tested on a physical Android 16 device.
 - Implemented lifecycle-safe event streams (BroadcastReceiver registered on first listener, released on last cancel; 5/5 register/unregister pairs checked in logcat) and moved blocking disk work onto a Pigeon TaskQueue background thread (confirmed off the main thread).
 - Unit-tested the channel layer: 13 Dart tests, 28 Kotlin tests, 7 on-device integration tests.
-- Wrote a Swift implementation of the same API (basic level).
+- Wrote a Swift implementation of the same API (basic level) that compiles in GitHub Actions on macOS.
+- Set up GitHub Actions CI for the plugin (analyze, Dart tests, Kotlin unit tests, Android and iOS builds), green on the public repo.
 
 Do not claim yet:
 - "Published" (not on pub.dev, no release tag).
-- "iOS tested", "iOS support" or "compiles on iOS": never compiled; CI has not run.
-- "CI/CD pipeline for the plugin": workflows are written, never run.
+- "iOS tested" or "iOS support": it compiles in CI but was never run.
+- "CI/CD pipeline": this is CI only; there is no release automation for the plugin.
 - "Integrated into a production app": not done.
