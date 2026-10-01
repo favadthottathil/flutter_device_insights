@@ -1,5 +1,8 @@
 # flutter_device_insights
 
+[![CI](https://github.com/favadthottathil/flutter_device_insights/actions/workflows/ci.yml/badge.svg)](https://github.com/favadthottathil/flutter_device_insights/actions/workflows/ci.yml)
+[![iOS build](https://github.com/favadthottathil/flutter_device_insights/actions/workflows/ios.yml/badge.svg)](https://github.com/favadthottathil/flutter_device_insights/actions/workflows/ios.yml)
+
 Battery level, device model, cache size, app settings shortcut, and live battery
 and thermal streams for Flutter. Android is tested on a real device. The iOS
 (Swift) side is written but has never been compiled or run by me; CI is set up
