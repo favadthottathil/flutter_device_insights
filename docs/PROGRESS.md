@@ -51,10 +51,11 @@ Started: 2026-10-01
 - [x] Git repo at the workspace root, pushed to the public GitHub repo above (branch main)
 - [ ] Integrated into a real app (not done: the app is not in this workspace)
 - [x] 5 interview answers written in `docs/INTERVIEW.md`, from real events in this project
-- [ ] v0.1.0 released. Decision (2026-10-02): publish only after the GitHub repo exists, the `repository` field and CI badge are added, and CI has compiled the Swift code. Not tagged, not on pub.dev
+- [x] v0.1.0 published to pub.dev (https://pub.dev/packages/flutter_device_insights, confirmed via the pub.dev API) and tagged `v0.1.0` on the commit it was published from
 
 ## Can claim on resume
 Safe now (true today):
+- Published a Flutter plugin to pub.dev (flutter_device_insights 0.1.0) with a public GitHub repo. Never put the flutter_metrics_sdk/pub.dev link in job applications; for this plugin, share the GitHub repo link rather than the pub.dev one unless you decide otherwise.
 - Built a Flutter plugin bridging Dart to native Android (Kotlin) with MethodChannel, EventChannel and Pigeon-generated type-safe APIs, tested on a physical Android 16 device.
 - Implemented lifecycle-safe event streams (BroadcastReceiver registered on first listener, released on last cancel; 5/5 register/unregister pairs checked in logcat) and moved blocking disk work onto a Pigeon TaskQueue background thread (confirmed off the main thread).
 - Unit-tested the channel layer: 13 Dart tests, 28 Kotlin tests, 7 on-device integration tests.
@@ -62,7 +63,6 @@ Safe now (true today):
 - Set up GitHub Actions CI for the plugin (analyze, Dart tests, Kotlin unit tests, Android and iOS builds), green on the public repo.
 
 Do not claim yet:
-- "Published" (not on pub.dev, no release tag).
 - "iOS tested" or "iOS support": it compiles in CI but was never run.
 - "CI/CD pipeline": this is CI only; there is no release automation for the plugin.
 - "Integrated into a production app": not done.
