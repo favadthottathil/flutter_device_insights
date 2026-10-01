@@ -47,10 +47,11 @@ Started: 2026-10-01
 - [x] README refreshed (iOS stated as untested, Swift output, cache size); CHANGELOG 0.1.0 written; version set to 0.1.0
 - [ ] Demo GIF (not made: needs a screen recording plus a converter such as ffmpeg, which is not installed here)
 - [x] `flutter pub publish --dry-run`: found and fixed a real error (generated code imports `meta`, now a dependency). Remaining: 1 warning, no `repository` field (GitHub URL unknown)
-- [ ] LICENSE is still the template text "TODO: Add your license here." Needs your choice of license and copyright name before any publish
+- [x] LICENSE: MIT, "Copyright (c) 2026 Favad" (change the name if it should read differently)
+- [x] Git repo initialised at the workspace root (branch main, first commit 8ee76ad, no remote yet)
 - [ ] Integrated into a real app (not done: the app is not in this workspace)
 - [x] 5 interview answers written in `docs/INTERVIEW.md`, from real events in this project
-- [ ] v0.1.0 released (no git repo, no tag, not published to pub.dev)
+- [ ] v0.1.0 released. Decision (2026-10-02): publish only after the GitHub repo exists, the `repository` field and CI badge are added, and CI has compiled the Swift code. Not tagged, not on pub.dev
 
 ## Can claim on resume
 Safe now (true today):
