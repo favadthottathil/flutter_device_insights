@@ -3,6 +3,8 @@
 [![CI](https://github.com/favadthottathil/flutter_device_insights/actions/workflows/ci.yml/badge.svg)](https://github.com/favadthottathil/flutter_device_insights/actions/workflows/ci.yml)
 [![iOS build](https://github.com/favadthottathil/flutter_device_insights/actions/workflows/ios.yml/badge.svg)](https://github.com/favadthottathil/flutter_device_insights/actions/workflows/ios.yml)
 
+![Device Insights demo running on Android 16](demo.gif)
+
 Battery level, device model, cache size, app settings shortcut, and live battery
 and thermal streams for Flutter. Android is tested on a real device. The iOS
 (Swift) side compiles in CI (`flutter build ios --no-codesign` on a macOS
