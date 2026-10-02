@@ -1,3 +1,7 @@
+## 0.1.2
+
+* Fixed broken demo GIF URL in README for pub.dev.
+
 ## 0.1.1
 
 * Added a demo GIF to the README showing the plugin in action on an Android device.
