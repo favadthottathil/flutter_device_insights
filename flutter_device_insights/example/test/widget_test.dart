@@ -1,27 +1,16 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
+// Smoke test for the Device Insights example app.
+// Verifies the shell renders without hitting any platform channel.
+// Golden tests for visual states are in golden_test.dart.
 
-import 'package:flutter/material.dart';
+import 'golden_test.dart' show InsightsPageStub;
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:flutter_device_insights_example/main.dart';
-
 void main() {
-  testWidgets('Verify Platform version', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
-
-    // Verify that platform version is retrieved.
-    expect(
-      find.byWidgetPredicate(
-        (Widget widget) =>
-            widget is Text && widget.data!.startsWith('Running on:'),
-      ),
-      findsOneWidget,
-    );
+  testWidgets('app renders AppBar title and initial output text', (tester) async {
+    await tester.pumpWidget(const InsightsPageStub());
+    await tester.pumpAndSettle();
+    expect(find.text('Device insights'), findsOneWidget);
+    expect(find.text('Tap a button'), findsOneWidget);
+    expect(find.text('Not listening'), findsOneWidget);
   });
 }
